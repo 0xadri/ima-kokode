@@ -46,8 +46,6 @@
   display: none;
 }
 
-/* Investment Calculator */
-
 .timer-block {
   border: 1px solid grey;
   padding: 50px;
@@ -56,9 +54,12 @@
   display: inline-block;
 }
 
+/* Investment Calculator */
+
 .inv-param-inputs-area {
   background-color: #026202;
   padding: 50px;
+  background: linear-gradient(180deg, #307e6c, #2b996d);
 }
 
 .inv-row-one,
@@ -82,4 +83,12 @@
 .inv-row-input-label ,
 .inv-row-input-field {
   font-size: 20px;
+}
+
+.inv-returns-area {
+  padding: 50px;
+}
+
+.inv-returns-th {
+  padding: 0 10px;
 }
