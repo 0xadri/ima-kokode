@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import Timer from "../components/timer";
+import Timer from "../components/Timer";
 
 const Home = () => {
   const avatarRef = useRef();
