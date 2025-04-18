@@ -46,10 +46,40 @@
   display: none;
 }
 
+/* Investment Calculator */
+
 .timer-block {
   border: 1px solid grey;
   padding: 50px;
   margin-bottom: 20px;
   margin-right: 20px;
   display: inline-block;
+}
+
+.inv-param-inputs-area {
+  background-color: #026202;
+  padding: 50px;
+}
+
+.inv-row-one,
+.inv-row-two {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.inv-row-input-block {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.inv-row-input-label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.inv-row-input-label ,
+.inv-row-input-field {
+  font-size: 20px;
 }

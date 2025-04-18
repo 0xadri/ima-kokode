@@ -1,5 +1,12 @@
+import InvestmentParamInputs from "../components/InvestmentParamInputs";
+
 const InvestmentCalculator = () => {
-  return <div>Investment Calculator</div>;
+  return (
+    <div>
+      <h1>Investment Calculator</h1>
+      <InvestmentParamInputs />
+    </div>
+  );
 };
 
 export default InvestmentCalculator;
