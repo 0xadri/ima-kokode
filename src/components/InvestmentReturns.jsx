@@ -30,13 +30,13 @@ const InvestmentReturns = ({ invParams }) => {
                 Year
               </th>
               <th scope="col" className="inv-returns-th">
-                Annual Investment
+                Total Inc. Interest
               </th>
               <th scope="col" className="inv-returns-th">
                 Interest (Year)
               </th>
               <th scope="col" className="inv-returns-th">
-                Total Inc. Interest
+                Total Interest
               </th>
               <th scope="col" className="inv-returns-th">
                 Total Invested Capital
@@ -44,20 +44,26 @@ const InvestmentReturns = ({ invParams }) => {
             </tr>
           </thead>
           <tbody>
-            {results.map((yearData, index) => (
-              <tr key={index}>
-                <th scope="row">{yearData.year}</th>
-                <td>{formatter.format(yearData.annualInvestment)}</td>
-                <td>{formatter.format(yearData.interest)}</td>
-                <td>{formatter.format(yearData.valueEndOfYear)}</td>
-                <td>
-                  {formatter.format(
-                    initialInvestment +
-                      yearData.annualInvestment * yearData.year
-                  )}
-                </td>
-              </tr>
-            ))}
+            {results.map((yearData, index) => {
+              const totalInterest =
+                yearData.valueEndOfYear -
+                yearData.annualInvestment * yearData.year -
+                initialInvestment;
+              return (
+                <tr key={index}>
+                  <th scope="row">{yearData.year}</th>
+                  <td>{formatter.format(yearData.valueEndOfYear)}</td>
+                  <td>{formatter.format(yearData.interest)}</td>
+                  <td>{formatter.format(totalInterest)}</td>
+                  <td>
+                    {formatter.format(
+                      initialInvestment +
+                        yearData.annualInvestment * yearData.year
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       )}
