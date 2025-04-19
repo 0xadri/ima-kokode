@@ -1,31 +1,28 @@
 import { useState } from "react";
-import { calculateInvestmentResults } from "../utils/investment";
+import { calculateInvestmentResults, formatter } from "../utils/investment";
 
-let results;
+const InvestmentReturns = ({ invParams }) => {
+  //   console.log("invParams:");
+  //   console.log(invParams);
+  const inputsAreValid =
+    invParams.initialInvestment > 0 &&
+    invParams.annualInvestment > 0 &&
+    invParams.expectedReturn > 0 &&
+    invParams.duration > 0;
 
-const InvestmentReturns = ({ calcParams }) => {
-  const [dataRows, setDataRows] = useState();
-
-  console.log("calcParams:");
-  console.log(calcParams);
-
-  if (
-    calcParams.initialInvestment > 0 &&
-    calcParams.annualInvestment > 0 &&
-    calcParams.expectedReturn > 0 &&
-    calcParams.duration > 0
-  ) {
-    // console.log(`${initInv} && ${annInv} && ${expRtrn} && ${duration}`);
-    results = calculateInvestmentResults(calcParams);
-    console.log("r:");
-    console.log(results);
-    // setDataRows(results);
-  }
+  const results = inputsAreValid ? calculateInvestmentResults(invParams) : null;
+  //   console.log("results:");
+  //   console.log(results);
+  const initialInvestment =
+    inputsAreValid &&
+    results[0].valueEndOfYear -
+      results[0].interest -
+      results[0].annualInvestment;
 
   return (
     <div className="inv-returns-area">
-      {!results && <div>No Results</div>}
-      {results && (
+      {!inputsAreValid && <div>Please Enter Positive Values</div>}
+      {inputsAreValid && results && (
         <table>
           <thead>
             <tr>
@@ -33,28 +30,32 @@ const InvestmentReturns = ({ calcParams }) => {
                 Year
               </th>
               <th scope="col" className="inv-returns-th">
-                Investment Value
+                Annual Investment
               </th>
               <th scope="col" className="inv-returns-th">
                 Interest (Year)
               </th>
               <th scope="col" className="inv-returns-th">
-                Total Interest
+                Total Inc. Interest
               </th>
               <th scope="col" className="inv-returns-th">
-                Invested Capital
+                Total Invested Capital
               </th>
             </tr>
           </thead>
           <tbody>
-            {/* todo: fix buggy values */}
-            {results.map((item, index) => (
+            {results.map((yearData, index) => (
               <tr key={index}>
-                <th scope="row">{item.year}</th>
-                <td>{item.annualInvestment}</td>
-                <td>{item.interest}</td>
-                <td>{item.valueEndOfYear}</td>
-                <td></td>
+                <th scope="row">{yearData.year}</th>
+                <td>{formatter.format(yearData.annualInvestment)}</td>
+                <td>{formatter.format(yearData.interest)}</td>
+                <td>{formatter.format(yearData.valueEndOfYear)}</td>
+                <td>
+                  {formatter.format(
+                    initialInvestment +
+                      yearData.annualInvestment * yearData.year
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

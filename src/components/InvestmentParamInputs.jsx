@@ -1,19 +1,4 @@
-import { useState } from "react";
-import InvestmentReturns from "./InvestmentReturns";
-
-const InvestmentParamInputs = ({ recalc }) => {
-  const [initInv, setInitInv] = useState(0);
-  const [annInv, setAnnInv] = useState(0);
-  const [expRtrn, setExpRtrn] = useState(0);
-  const [duration, setDuration] = useState(0);
-
-  const calcParams = {
-    initialInvestment: initInv,
-    annualInvestment: annInv,
-    expectedReturn: expRtrn,
-    duration: duration,
-  };
-
+const InvestmentParamInputs = ({ setInvestmentParameters, invParams }) => {
   return (
     <>
       <div className="inv-param-inputs-area">
@@ -28,8 +13,10 @@ const InvestmentParamInputs = ({ recalc }) => {
               id="initial-investment"
               placeholder="Type Initial Investment..."
               className="inv-row-input-field"
-              value={initInv}
-              onChange={(e) => setInitInv(e.target.value)}
+              value={invParams.initialInvestment}
+              onChange={(e) =>
+                setInvestmentParameters("initialInvestment", e.target.value)
+              }
             />
           </div>
           <div className="inv-row-input-block">
@@ -42,8 +29,10 @@ const InvestmentParamInputs = ({ recalc }) => {
               id="annual-investment"
               placeholder="Type Annual Investment..."
               className="inv-row-input-field"
-              value={annInv}
-              onChange={(e) => setAnnInv(e.target.value)}
+              value={invParams.annualInvestment}
+              onChange={(e) =>
+                setInvestmentParameters("annualInvestment", e.target.value)
+              }
             />
           </div>
         </div>
@@ -58,8 +47,10 @@ const InvestmentParamInputs = ({ recalc }) => {
               id="expected-return"
               placeholder="Type Expected Return..."
               className="inv-row-input-field"
-              value={expRtrn}
-              onChange={(e) => setExpRtrn(e.target.value)}
+              value={invParams.expectedReturn}
+              onChange={(e) =>
+                setInvestmentParameters("expectedReturn", e.target.value)
+              }
             />
           </div>
           <div className="inv-row-input-block">
@@ -72,13 +63,14 @@ const InvestmentParamInputs = ({ recalc }) => {
               id="duration"
               placeholder="Type Duration..."
               className="inv-row-input-field"
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
+              value={invParams.duration}
+              onChange={(e) =>
+                setInvestmentParameters("duration", e.target.value)
+              }
             />
           </div>
         </div>
       </div>
-      <InvestmentReturns calcParams={calcParams} />
     </>
   );
 };
