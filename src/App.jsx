@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import InvestmentCalculator from "./pages/InvestmentCalculator";
 import NavBar from "./components/NavBar";
+import TicTacToe from "./pages/TicTacToe";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
           path="/InvestmentCalculator"
           element={<InvestmentCalculator />}
         />
+        <Route path="/TicTacToe" element={<TicTacToe />} />
       </Routes>
     </>
   );
