@@ -6,6 +6,79 @@ const PlayBoard = () => {
     ["", "O", ""],
     ["", "", ""],
   ]);
+  const [playerTurn, setPlayerTurn] = useState("X");
+
+  const switchPlayerTurn = () => {
+    if (playerTurn === "X") setPlayerTurn("O");
+    else {
+      setPlayerTurn("X");
+    }
+  };
+
+  const checkIfSymbolWins = (symbol, boardValues) => {
+    console.log(boardValues);
+    // Horizontal
+    if (
+      boardValues[0][0] === symbol &&
+      boardValues[0][1] === symbol &&
+      boardValues[0][2] === symbol
+    ) {
+      return true;
+      console.log("here");
+    } else if (
+      boardValues[1][0] === symbol &&
+      boardValues[1][1] === symbol &&
+      boardValues[1][2] === symbol
+    ) {
+      return true;
+    } else if (
+      boardValues[2][0] === symbol &&
+      boardValues[2][1] === symbol &&
+      boardValues[2][2] === symbol
+    ) {
+      return true;
+    }
+    // Vertical
+    else if (
+      boardValues[0][0] === symbol &&
+      boardValues[1][0] === symbol &&
+      boardValues[2][0] === symbol
+    ) {
+      return true;
+    } else if (
+      boardValues[0][1] === symbol &&
+      boardValues[1][1] === symbol &&
+      boardValues[2][1] === symbol
+    ) {
+      return true;
+    } else if (
+      boardValues[0][2] === symbol &&
+      boardValues[1][2] === symbol &&
+      boardValues[2][2] === symbol
+    ) {
+      return true;
+    }
+    // Diagonal
+    else if (
+      boardValues[0][0] === symbol &&
+      boardValues[1][1] === symbol &&
+      boardValues[2][2] === symbol
+    ) {
+      return true;
+    } else if (
+      boardValues[0][2] === symbol &&
+      boardValues[1][1] === symbol &&
+      boardValues[2][0] === symbol
+    ) {
+      return true;
+    }
+  };
+
+  const checkIfOver = (boardValues) => {
+    const xIsWinner = checkIfSymbolWins(playerTurn, boardValues);
+    xIsWinner && alert(`${playerTurn} Wins!`);
+  };
+
   const handleClick = (e) => {
     const row = +e.target.getAttribute("row");
     const col = +e.target.getAttribute("col");
@@ -15,11 +88,15 @@ const PlayBoard = () => {
       return;
     }
     const newBoard = boardValues.map((row) => [...row]);
-    newBoard[row][col] = "X";
+    newBoard[row][col] = playerTurn;
     setBoardValues(newBoard);
+    checkIfOver(newBoard);
+    switchPlayerTurn();
   };
+
   return (
     <>
+      <h2>Turn Now: {playerTurn}</h2>
       <div className="board-row">
         <div className="board-cell">
           <span className="board-symbol">{boardValues[0][0]}</span>
