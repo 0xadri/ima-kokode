@@ -8,6 +8,8 @@ const NavBar = () => {
       <Link to="/InvestmentCalculator">Investment Calculator</Link>
       {" · "}
       <Link to="/TicTacToe">Tic Tac Toe</Link>
+      {" · "}
+      <Link to="/Playground">🕹</Link>
     </div>
   );
 };
