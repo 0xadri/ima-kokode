@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-const PlayerSettings = ({ name, symbol }) => {
-  const [playerName, setPlayerName] = useState(name);
+const PlayerSettings = ({ symbol, namePlayer, setNamePlayer }) => {
   const [fieldIsEditMode, setFieldIsEditMode] = useState(false);
 
   const handleToggleEditSave = (e) => {
@@ -16,11 +15,11 @@ const PlayerSettings = ({ name, symbol }) => {
           className="player-name"
           name="player-name"
           type="text"
-          value={playerName}
-          onChange={(e) => setPlayerName(e.target.value)}
+          value={namePlayer}
+          onChange={(e) => setNamePlayer(e.target.value)}
         />
       ) : (
-        <span className="player-name">{playerName}</span>
+        <span className="player-name">{namePlayer}</span>
       )}
       <span>{symbol}</span>
       <button className="save-edit-button" onClick={handleToggleEditSave}>

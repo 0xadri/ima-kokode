@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const PlayBoard = () => {
+const PlayBoard = ({ showWinner }) => {
   const [boardValues, setBoardValues] = useState([
-    ["X", "O", ""],
-    ["", "O", ""],
+    ["", "", ""],
+    ["", "", ""],
     ["", "", ""],
   ]);
-  const [playerTurn, setPlayerTurn] = useState("X");
+  const [playerTurn, setPlayerTurn] = useState("O");
 
   const switchPlayerTurn = () => {
     if (playerTurn === "X") setPlayerTurn("O");
@@ -16,7 +16,7 @@ const PlayBoard = () => {
   };
 
   const checkIfSymbolWins = (symbol, boardValues) => {
-    console.log(boardValues);
+    // console.log(boardValues);
     // Horizontal
     if (
       boardValues[0][0] === symbol &&
@@ -75,22 +75,27 @@ const PlayBoard = () => {
   };
 
   const checkIfOver = (boardValues) => {
-    const xIsWinner = checkIfSymbolWins(playerTurn, boardValues);
-    xIsWinner && alert(`${playerTurn} Wins!`);
+    return checkIfSymbolWins(playerTurn, boardValues);
   };
 
   const handleClick = (e) => {
     const row = +e.target.getAttribute("row");
     const col = +e.target.getAttribute("col");
     const cellVal = boardValues[row][col];
+
     if (cellVal) {
       alert("Pick another cell. This one is already taken.");
       return;
     }
+
     const newBoard = boardValues.map((row) => [...row]);
     newBoard[row][col] = playerTurn;
     setBoardValues(newBoard);
-    checkIfOver(newBoard);
+
+    if (checkIfOver(newBoard)) {
+      showWinner(playerTurn);
+      return;
+    }
     switchPlayerTurn();
   };
 
