@@ -9,10 +9,7 @@ const PlayBoard = ({ showWinner }) => {
   const [playerTurn, setPlayerTurn] = useState("O");
 
   const switchPlayerTurn = () => {
-    if (playerTurn === "X") setPlayerTurn("O");
-    else {
-      setPlayerTurn("X");
-    }
+    setPlayerTurn((playerTurn) => (playerTurn === "O" ? "X" : "O"));
   };
 
   const checkIfSymbolWins = (symbol, boardValues) => {
@@ -90,7 +87,7 @@ const PlayBoard = ({ showWinner }) => {
 
     const newBoard = boardValues.map((row) => [...row]);
     newBoard[row][col] = playerTurn;
-    setBoardValues(newBoard);
+    setBoardValues(() => newBoard);
 
     if (checkIfOver(newBoard)) {
       showWinner(playerTurn);
