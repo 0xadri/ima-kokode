@@ -46,6 +46,8 @@
   display: none;
 }
 
+/* Timer Challenge */
+
 .timer-block {
   border: 1px solid grey;
   padding: 50px;
@@ -53,6 +55,16 @@
   margin-right: 20px;
   display: inline-block;
 }
+
+.timer-log-section {
+  text-align: left;
+}
+.timer-log-label {
+  display: inline-block;
+  min-width: 50px;
+}
+
+/* END: Timer Challenge */
 
 /* Investment Calculator */
 

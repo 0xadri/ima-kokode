@@ -1,21 +1,59 @@
 import { useState } from "react";
 
+/*
+ * Playground Page To Test Things Out
+ */
+
 const Playground = () => {
-  const [students, setStudents] = useState(["Max", "Lauren", "Marc"]);
+  const [profile, setProfile] = useState({
+    name: "James",
+    city: "London",
+  });
 
-  const handleClickAdd = (name) => {
-    setStudents((students) => [...students, name]);
-  };
-  const handleClickRemove = (name) => {
-    setStudents((students) => {
-      const index = students.indexOf(name);
-      if (index > -1) return students.splice(index, 1);
-    });
+  const handleClick = (keyName, value) => {
+    setProfile((prev) => ({
+      ...prev, // Clone object for immutability (Shallow Clone)
+      [keyName]: value, // Add/Update Property
+    }));
   };
 
-  //   handleClickRemove("Max");
-  //   console.log(students);
-  return <div>Playground</div>;
+  console.log(profile);
+
+  const avatarRef = useRef();
+
+  const handleClickAvatar = () => {
+    // todo
+    console.log(avatarRef.current);
+    avatarRef.current.click();
+  };
+
+  return (
+    <div>
+      <h1>Playground</h1>
+      <p>Just a playground page where I test things out.</p>
+      <div>
+        <button onClick={() => handleClick("age", "33")}>
+          UPDATE AGE TO 33
+        </button>
+        <button onClick={() => handleClick("age", "44")}>
+          UPDATE AGE TO 44
+        </button>
+      </div>
+      <div style="margin-top: 30px">
+        <input
+          className="avatar-file-input"
+          ref={avatarRef}
+          type="file"
+          id="avatar"
+          name="avatar"
+          accept="image/png, image/jpeg"
+        />
+        <button className="avatar-file-btn" onClick={handleClickAvatar}>
+          Add Profile Pic
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default Playground;

@@ -2,22 +2,29 @@ import { useRef, useState } from "react";
 
 /* Timer With Ref */
 
-const Timer = ({ seconds, name }) => {
+const TimerComp = ({ seconds, name, updateLog }) => {
   const [started, setStarted] = useState(false);
   const timer = useRef();
 
   const handleStart = () => {
+    updateLog("clear");
     timer.current = setTimeout(() => {
-      console.log(`Ended ${timer.current} after ${seconds} second.`);
+      updateLog(
+        "endLogTxt",
+        `You Failed! Ended itself after ${seconds} second. [timerId: ${timer.current}]`
+      );
       setStarted(false);
     }, 1000 * seconds);
-    console.log(`Go!  ${timer.current}`);
+    updateLog("startLogTxt", `Let's Go! [timerId: ${timer.current}]`);
     setStarted(true);
   };
 
   const handleStop = () => {
     clearTimeout(timer.current);
-    console.log(`Stopped! ${timer.current}`);
+    updateLog(
+      "stopLogTxt",
+      `You Succeeded! You stopped before the end! [timerId: ${timer.current}]`
+    );
     setStarted(false);
   };
 
@@ -31,4 +38,4 @@ const Timer = ({ seconds, name }) => {
   );
 };
 
-export default Timer;
+export default TimerComp;
