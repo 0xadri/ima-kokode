@@ -155,3 +155,61 @@
   width: 100%;
   height: 100%;
 }
+
+/* END: Tic Tac Toe */
+
+
+/* Project MGMT */
+
+.mgmt-main {
+  min-height: 210px;
+}
+
+.mgmt-left-nav {
+  float: left;
+  width: 20%;
+}
+
+.mgmt-content {
+  width: 80%;
+  float: right;
+}
+
+.mgmt-btns {
+  width: 100%;
+  height: 40px;
+}
+
+.mgmt-save-btn,
+.mgmt-cancel-btn {
+  float: right;
+  margin-left: 10px;
+}
+
+.mgmt-save-btn {
+  background-color: rgb(158, 156, 156);
+}
+
+.mgmt-title-label,
+.mgmt-title-input,
+.mgmt-description-label,
+.mgmt-description-input,
+.mgmt-duedate-input,
+.mgmt-duedate-label {
+  display: block;
+  text-align: left;
+}
+
+.mgmt-title-input,
+.mgmt-description-input,
+.mgmt-duedate-input {
+  width: 98%;
+}
+.mgmt-title-label,
+.mgmt-description-label,
+.mgmt-duedate-label {
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+/* END: Project MGMT */

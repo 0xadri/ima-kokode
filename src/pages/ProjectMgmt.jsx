@@ -1,8 +1,15 @@
+import LeftPanel from "../components/LeftPanel";
+import MainContent from "../components/MainContent";
+
 const ProjectMgmt = () => {
   return (
-    <div>
+    <>
       <h1>Project Management</h1>
-    </div>
+      <div className="mgmt-main">
+        <LeftPanel />
+        <MainContent />
+      </div>
+    </>
   );
 };
 
