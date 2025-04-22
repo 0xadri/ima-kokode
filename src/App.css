@@ -41,10 +41,16 @@
   color: #888;
 }
 
+/* Profile Pic */
 
+.avatar-section {
+  margin-top: 40px;
+}
 .avatar-file-input {
   display: none;
 }
+
+/* END: Profile Pic */
 
 /* Timer Challenge */
 

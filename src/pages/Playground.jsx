@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 /*
  * Playground Page To Test Things Out
@@ -9,18 +9,15 @@ const Playground = () => {
     name: "James",
     city: "London",
   });
-
   const handleClick = (keyName, value) => {
     setProfile((prev) => ({
       ...prev, // Clone object for immutability (Shallow Clone)
       [keyName]: value, // Add/Update Property
     }));
   };
-
   console.log(profile);
 
   const avatarRef = useRef();
-
   const handleClickAvatar = () => {
     // todo
     console.log(avatarRef.current);
@@ -39,7 +36,7 @@ const Playground = () => {
           UPDATE AGE TO 44
         </button>
       </div>
-      <div style="margin-top: 30px">
+      <div className="avatar-section">
         <input
           className="avatar-file-input"
           ref={avatarRef}
