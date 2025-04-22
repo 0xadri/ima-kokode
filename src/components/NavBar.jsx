@@ -7,6 +7,8 @@ const NavBar = () => {
       {" · "}
       <Link to="/Timer">Timer Game</Link>
       {" · "}
+      <Link to="/ProjectMgmt">Project Management</Link>
+      {" · "}
       <Link to="/InvestmentCalculator">Investment Calculator</Link>
       {" · "}
       <Link to="/TicTacToe">Tic Tac Toe</Link>

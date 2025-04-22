@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import TicTacToe from "./pages/TicTacToe";
 import Playground from "./pages/Playground";
 import Timer from "./pages/Timer";
+import ProjectMgmt from "./pages/ProjectMgmt";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +22,7 @@ function App() {
           path="/InvestmentCalculator"
           element={<InvestmentCalculator />}
         />
+        <Route path="/ProjectMgmt" element={<ProjectMgmt />} />
         <Route path="/TicTacToe" element={<TicTacToe />} />
         <Route path="/Playground" element={<Playground />} />
       </Routes>
