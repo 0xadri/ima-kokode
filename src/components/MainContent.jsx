@@ -1,38 +1,30 @@
 import { useState } from "react";
 
-const NO_PROJECT_SELECTED = "no-project-selected";
-const CREATE_PROJECT = "create-project";
-
-const MainContent = () => {
-  const [view, setView] = useState(NO_PROJECT_SELECTED);
-
-  const handleClickCreate = () => {
-    setView(CREATE_PROJECT);
-  };
-  const handleClickCancel = () => {
-    setView(NO_PROJECT_SELECTED);
-  };
-  const handleClickSave = () => {
-    // todo
-    // setView("create-project");
-  };
-
-  if (view === NO_PROJECT_SELECTED) {
+const MainContent = ({ views, currView, handleClick }) => {
+  if (currView === views.NO_PROJECT_SELECTED) {
     return (
       <div className="mgmt-content">
         <h2>No Project Selected</h2>
         <p>Select a project or get started with a new one</p>
-        <button onClick={handleClickCreate}>Create New Project</button>
+        <button onClick={() => handleClick(views.CREATE_PROJECT)}>
+          Create New Project
+        </button>
       </div>
     );
-  } else if (CREATE_PROJECT) {
+  } else if (currView === views.CREATE_PROJECT) {
     return (
       <div className="mgmt-content">
         <div className="mgmt-btns">
-          <button onClick={handleClickSave} className="mgmt-save-btn">
+          <button
+            onClick={() => handleClick(views.PROJECT_OVERVIEW)}
+            className="mgmt-save-btn"
+          >
             Save
           </button>
-          <button onClick={handleClickCancel} className="mgmt-cancel-btn">
+          <button
+            onClick={() => handleClick(views.NO_PROJECT_SELECTED)}
+            className="mgmt-cancel-btn"
+          >
             Cancel
           </button>
         </div>
@@ -59,6 +51,21 @@ const MainContent = () => {
             name="duedate"
             className="mgmt-duedate-input"
           />
+        </div>
+      </div>
+    );
+  } else if (currView === views.PROJECT_OVERVIEW) {
+    // todo
+    return (
+      <div>
+        <h2>TODO: Project Name</h2>
+        <p>TODO: Project Date</p>
+        <p>TODO: Project Description</p>
+        <div>
+          <h3>Tasks</h3>
+          <label htmlFor="task">Add Task</label>
+          <input type="text" name="task" />
+          <p>This project does not have any tasks yet.</p>
         </div>
       </div>
     );
