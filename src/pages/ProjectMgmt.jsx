@@ -10,7 +10,7 @@ const VIEWS = {
 
 const ProjectMgmt = () => {
   const [currMainView, setCurrMainView] = useState(VIEWS.NO_PROJECT_SELECTED);
-  const [projects, setProjects] = useState(null);
+  const [projectsData, setProjectsData] = useState(null);
 
   const handleClickMainPanel = (action) => {
     if (action === VIEWS.CREATE_PROJECT) {
@@ -34,6 +34,7 @@ const ProjectMgmt = () => {
           views={VIEWS}
           currView={currMainView}
           handleClick={handleClickMainPanel}
+          projectsData={projectsData}
         />
       </div>
     </>

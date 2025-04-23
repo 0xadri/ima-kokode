@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -171,8 +172,17 @@
 }
 
 .mgmt-content {
-  width: 80%;
   float: right;
+  width: 80%;
+  text-align: left;
+}
+
+.mgmt-content.no-project-view {
+  text-align: center;
+}
+.mgmt-content,
+.mgmt-content * {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .mgmt-btns {
@@ -204,12 +214,56 @@
 .mgmt-description-input,
 .mgmt-duedate-input {
   width: 98%;
+  font-size: 1em;
 }
 .mgmt-title-label,
 .mgmt-description-label,
 .mgmt-duedate-label {
   margin-top: 20px;
   text-transform: uppercase;
+}
+
+.mgmt-project-title {
+  margin-top: 0;
+  margin-bottom: 0.4em;
+  font-size: 2.2em;
+}
+
+.mgmt-project-duedate {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: grey;
+}
+
+.mgmt-tasks-section {
+  border-top: 1px solid grey;
+}
+
+.mgmt-add-task-input {
+  width: 200px;
+  font-size: 1em;
+}
+
+.mgmt-add-task-btn {
+  background-color: transparent;
+}
+
+.mgmt-task-list {
+	list-style: none;
+  padding: 0;
+}
+.mgmt-task-item {
+  padding: 0;
+}
+
+.mgmt-task-name {
+  width: 80%;
+  display: inline-block;
+}
+
+.mgmt-task-clear-btn {
+  width: 19%;
+  background-color: transparent;
 }
 
 /* END: Project MGMT */
