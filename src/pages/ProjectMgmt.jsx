@@ -8,9 +8,17 @@ const VIEWS = {
   PROJECT_OVERVIEW: "project-overview",
 };
 
+const PROJECT_DATA_INIT = {
+  title: "",
+  description: "",
+  duedate: "",
+  tasks: [],
+};
+
 const ProjectMgmt = () => {
   const [currMainView, setCurrMainView] = useState(VIEWS.NO_PROJECT_SELECTED);
   const [projectsData, setProjectsData] = useState(null);
+  const [newProjectData, setNewProjectData] = useState(PROJECT_DATA_INIT);
 
   const handleClickMainPanel = (action) => {
     if (action === VIEWS.CREATE_PROJECT) {
@@ -25,6 +33,32 @@ const ProjectMgmt = () => {
     }
   };
 
+  const handleChgProjDeets = (e, propName) => {
+    setNewProjectData((prev) => ({
+      ...prev,
+      [propName]: e.target.value,
+    }));
+  };
+
+  const handleAddTask = (task) => {
+    setNewProjectData((prev) => ({
+      ...prev,
+      tasks: [...prev.tasks, task],
+    }));
+  };
+
+  const handleRemoveTask = (task) => {
+    setNewProjectData((prev) => {
+      const clonePrevTasks = [...prev.tasks];
+      const index = clonePrevTasks.indexOf(task);
+      if (index > -1) clonePrevTasks.splice(index, 1); // Modify array
+      return {
+        ...prev,
+        tasks: clonePrevTasks,
+      };
+    });
+  };
+
   return (
     <>
       <h1>Project Management</h1>
@@ -35,6 +69,10 @@ const ProjectMgmt = () => {
           currView={currMainView}
           handleClick={handleClickMainPanel}
           projectsData={projectsData}
+          handleChgProjDeets={handleChgProjDeets}
+          handleAddTask={handleAddTask}
+          handleRemoveTask={handleRemoveTask}
+          newProjectData={newProjectData}
         />
       </div>
     </>

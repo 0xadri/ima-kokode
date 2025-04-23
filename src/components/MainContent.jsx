@@ -1,12 +1,5 @@
 import { useState, useRef } from "react";
 
-const PROJECT_DATA_INIT = {
-  title: "",
-  description: "",
-  duedate: "",
-  tasks: [],
-};
-
 function wordToUniqueNumber(word) {
   let uniqueNumber = "";
   for (let i = 0; i < word.length; i++) {
@@ -15,35 +8,20 @@ function wordToUniqueNumber(word) {
   return parseInt(uniqueNumber);
 }
 
-const MainContent = ({ views, currView, handleClick }) => {
-  const [newProjectData, setNewProjectData] = useState(PROJECT_DATA_INIT);
+const MainContent = ({
+  views,
+  currView,
+  handleClick,
+  handleChgProjDeets,
+  handleAddTask,
+  handleRemoveTask,
+  newProjectData,
+}) => {
   const newTaskRef = useRef();
 
-  const handleChgProjDeets = (e, propName) => {
-    setNewProjectData((prev) => ({
-      ...prev,
-      [propName]: e.target.value,
-    }));
-  };
-
-  const handleAddTask = () => {
+  const handleAdd = () => {
     const task = newTaskRef.current.value;
-    setNewProjectData((prev) => ({
-      ...prev,
-      tasks: [...prev.tasks, task],
-    }));
-  };
-
-  const handleRemoveTask = (task) => {
-    setNewProjectData((prev) => {
-      const clonePrevTasks = [...prev.tasks];
-      const index = clonePrevTasks.indexOf(task);
-      if (index > -1) clonePrevTasks.splice(index, 1); // Modify array
-      return {
-        ...prev,
-        tasks: clonePrevTasks,
-      };
-    });
+    handleAddTask(task);
   };
 
   if (currView === views.NO_PROJECT_SELECTED) {
@@ -128,7 +106,7 @@ const MainContent = ({ views, currView, handleClick }) => {
             className="mgmt-add-task-input"
             required
           />
-          <button className="mgmt-add-task-btn" onClick={handleAddTask}>
+          <button className="mgmt-add-task-btn" onClick={handleAdd}>
             Add Task
           </button>
           {newProjectData.tasks.length > 0 ? (
