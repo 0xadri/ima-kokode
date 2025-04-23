@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import LeftPanel from "../components/LeftPanel";
 import MainContent from "../components/MainContent";
 
@@ -17,8 +17,9 @@ const PROJECT_DATA_INIT = {
 
 const ProjectMgmt = () => {
   const [currMainView, setCurrMainView] = useState(VIEWS.NO_PROJECT_SELECTED);
-  const [projectsData, setProjectsData] = useState(null);
+  const otherProjectsData = useRef([]);
   const [newProjectData, setNewProjectData] = useState(PROJECT_DATA_INIT);
+  const [leftMenuItems, setLeftMenuItems] = useState([]);
 
   const handleClickMainPanel = (action) => {
     if (action === VIEWS.CREATE_PROJECT) {
@@ -26,11 +27,18 @@ const ProjectMgmt = () => {
     } else if (action === VIEWS.NO_PROJECT_SELECTED) {
       setCurrMainView(VIEWS.NO_PROJECT_SELECTED);
     } else if (action === VIEWS.PROJECT_OVERVIEW) {
-      // validate data
-      // if valid
-      // then go to next screen
       setCurrMainView(VIEWS.PROJECT_OVERVIEW);
+      updateLeftMenu();
     }
+  };
+
+  const updateLeftMenu = () => {
+    const title = newProjectData.title;
+    setLeftMenuItems((prev) => {
+      const newLeftMenuItems = [...leftMenuItems]; // Clone array for immutability
+      newLeftMenuItems.push(title); // Modify array
+      return newLeftMenuItems;
+    });
   };
 
   const handleChgProjDeets = (e, propName) => {
@@ -59,16 +67,57 @@ const ProjectMgmt = () => {
     });
   };
 
+  const handleProjectClicked = (projectTitle) => {
+    // put active proj in memory
+    const cloneActiveProjectData = {
+      ...newProjectData,
+      tasks: [...newProjectData.tasks],
+    };
+    otherProjectsData.current.push(cloneActiveProjectData);
+    // find selected project in ref
+    for (const projectData of otherProjectsData.current) {
+      if (projectData.title === projectTitle) {
+        // clone selected project from ref to current state
+        setNewProjectData({
+          ...projectData,
+          tasks: [...projectData.tasks],
+        });
+        // remove selected project from ref
+        const index = otherProjectsData.current.indexOf(projectTitle);
+        if (index > -1) otherProjectsData.current.splice(index, 1); // Modify array
+      }
+    }
+    // go to relevant view
+    setCurrMainView(VIEWS.PROJECT_OVERVIEW);
+  };
+
+  const handleAddNewProject = () => {
+    // put active proj in memory
+    const cloneProjectData = {
+      ...newProjectData,
+      tasks: [...newProjectData.tasks],
+    };
+    otherProjectsData.current.push(cloneProjectData);
+    // create fresh state for newProjectData
+    setNewProjectData(PROJECT_DATA_INIT);
+    // set correct view
+    setCurrMainView(VIEWS.CREATE_PROJECT);
+  };
+
   return (
     <>
       <h1>Project Management</h1>
       <div className="mgmt-main">
-        <LeftPanel />
+        <LeftPanel
+          leftMenuItems={leftMenuItems}
+          handleAddNewProject={handleAddNewProject}
+          activeTitle={newProjectData.title}
+          handleProjectClicked={handleProjectClicked}
+        />
         <MainContent
           views={VIEWS}
           currView={currMainView}
           handleClick={handleClickMainPanel}
-          projectsData={projectsData}
           handleChgProjDeets={handleChgProjDeets}
           handleAddTask={handleAddTask}
           handleRemoveTask={handleRemoveTask}

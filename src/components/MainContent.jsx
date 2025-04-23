@@ -21,7 +21,25 @@ const MainContent = ({
 
   const handleAdd = () => {
     const task = newTaskRef.current.value;
-    handleAddTask(task);
+    if (task && task.replaceAll(" ", "")) {
+      handleAddTask(task);
+    } else {
+      alert("Add a task first");
+    }
+  };
+
+  const handleSaveProjDetails = () => {
+    if (
+      newProjectData.title &&
+      newProjectData.title.replaceAll(" ", "").length > 0 &&
+      newProjectData.description &&
+      newProjectData.description.replaceAll(" ", "").length > 0 &&
+      newProjectData.duedate
+    ) {
+      handleClick(views.PROJECT_OVERVIEW);
+    } else {
+      alert("Finish Filling The Form");
+    }
   };
 
   if (currView === views.NO_PROJECT_SELECTED) {
@@ -38,10 +56,7 @@ const MainContent = ({
     return (
       <div className="mgmt-content">
         <div className="mgmt-btns">
-          <button
-            onClick={() => handleClick(views.PROJECT_OVERVIEW)}
-            className="mgmt-save-btn"
-          >
+          <button onClick={handleSaveProjDetails} className="mgmt-save-btn">
             Save
           </button>
           <button

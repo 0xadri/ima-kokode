@@ -295,6 +295,12 @@
   padding: 0;
   padding-left: 20px;
   line-height: 2.4em;
+  margin-bottom: 6px;
+  /** Hides any content that extends outside the box **/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /** IE6+, Firefox 7+, Opera 11+, Chrome, Safari **/
+  -o-text-overflow: ellipsis; /** Opera 9 & 10 **/
 }
 .mgmt-left-nav-proj-item.activetab {
   background-color: #373737;
