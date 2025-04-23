@@ -7,11 +7,19 @@ const PROJECT_DATA_INIT = {
   tasks: [],
 };
 
+function wordToUniqueNumber(word) {
+  let uniqueNumber = "";
+  for (let i = 0; i < word.length; i++) {
+    uniqueNumber += word.charCodeAt(i);
+  }
+  return parseInt(uniqueNumber);
+}
+
 const MainContent = ({ views, currView, handleClick }) => {
   const [newProjectData, setNewProjectData] = useState(PROJECT_DATA_INIT);
   const newTaskRef = useRef();
 
-  const handleChange = (e, propName) => {
+  const handleChgProjDeets = (e, propName) => {
     setNewProjectData((prev) => ({
       ...prev,
       [propName]: e.target.value,
@@ -20,11 +28,22 @@ const MainContent = ({ views, currView, handleClick }) => {
 
   const handleAddTask = () => {
     const task = newTaskRef.current.value;
-    // add/update value
     setNewProjectData((prev) => ({
       ...prev,
       tasks: [...prev.tasks, task],
     }));
+  };
+
+  const handleRemoveTask = (task) => {
+    setNewProjectData((prev) => {
+      const clonePrevTasks = [...prev.tasks];
+      const index = clonePrevTasks.indexOf(task);
+      if (index > -1) clonePrevTasks.splice(index, 1); // Modify array
+      return {
+        ...prev,
+        tasks: clonePrevTasks,
+      };
+    });
   };
 
   if (currView === views.NO_PROJECT_SELECTED) {
@@ -65,7 +84,7 @@ const MainContent = ({ views, currView, handleClick }) => {
             id="title"
             className="mgmt-title-input"
             value={newProjectData.title}
-            onChange={(e) => handleChange(e, "title")}
+            onChange={(e) => handleChgProjDeets(e, "title")}
           />
           <label htmlFor="description" className="mgmt-description-label">
             Description
@@ -75,7 +94,7 @@ const MainContent = ({ views, currView, handleClick }) => {
             id="description"
             className="mgmt-description-input"
             value={newProjectData.description}
-            onChange={(e) => handleChange(e, "description")}
+            onChange={(e) => handleChgProjDeets(e, "description")}
           />
           <label htmlFor="duedate" className="mgmt-duedate-label">
             Due Date
@@ -87,7 +106,7 @@ const MainContent = ({ views, currView, handleClick }) => {
             id="duedate"
             className="mgmt-duedate-input"
             value={newProjectData.duedate}
-            onChange={(e) => handleChange(e, "duedate")}
+            onChange={(e) => handleChgProjDeets(e, "duedate")}
           />
         </div>
       </div>
@@ -112,14 +131,21 @@ const MainContent = ({ views, currView, handleClick }) => {
           <button className="mgmt-add-task-btn" onClick={handleAddTask}>
             Add Task
           </button>
-          {newProjectData.tasks ? (
+          {newProjectData.tasks.length > 0 ? (
             <ul className="mgmt-task-list">
-              {newProjectData.tasks.map((task) => (
-                <li className="mgmt-task-item">
-                  <span className="mgmt-task-name">{task}</span>
-                  <button className="mgmt-task-clear-btn">Clear</button>
-                </li>
-              ))}
+              {newProjectData.tasks.map((task) => {
+                return (
+                  <li key={wordToUniqueNumber(task)} className="mgmt-task-item">
+                    <span className="mgmt-task-name">{task}</span>
+                    <button
+                      className="mgmt-task-clear-btn"
+                      onClick={() => handleRemoveTask(task)}
+                    >
+                      Clear
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           ) : (
             <p className="mgmt-tasks-notasksyet">
