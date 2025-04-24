@@ -15,6 +15,10 @@ const PROJECT_DATA_INIT = {
   tasks: [],
 };
 
+// Could:
+//   1. Project Delete Feature
+//   2. Remove text in "add task" input field
+
 const ProjectMgmt = () => {
   const [currMainView, setCurrMainView] = useState(VIEWS.NO_PROJECT_SELECTED);
   const otherProjectsData = useRef([]);

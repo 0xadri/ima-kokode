@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import Button from "../components/Button";
 
 /*
  * Playground Page To Test Things Out
@@ -49,6 +50,9 @@ const Playground = () => {
           Add Profile Pic
         </button>
       </div>
+      <Button greeting="hey" name="Joe">
+        Click Me
+      </Button>
     </div>
   );
 };
