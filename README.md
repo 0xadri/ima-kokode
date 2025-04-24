@@ -1,18 +1,22 @@
 # Imakokode
 
-Imakokode stands for "Here and Now".
+Imakokode stands for "Here and Now" in Japanese. Just had to come up with a name
 
-Project under construction... 🚧🧱👷👷‍♀️🧑‍🏭
+This is a 4-in-1 Web App, it contains 4 React Mini Apps: 
+ - Project Mgmt App
+ - Tic-Tac-Toe Game
+ - Investment Calculator
+ - Timer Game
 
 ### Tech
 
-`Javascript` · `ReactJS` · `NodeJS` · `Vite`
+`Javascript` · `ReactJS`· `Vite` · `NodeJS` 
 
 ### Goals
 
-✣ Practice `ReactJS`: `useHook`, `useEffect`, `useRef`, `context API`, `router`
+✣ Practice `ReactJS`: `useState`, `useRef`, `router`, `spreader syntax`, `props drilling`, `lifting the state`, `compute values`, `derive values`, `state as object`,`state as array`, `state as object w nested objects`
 
-✣ Practice `JavaScript`: `API calls`, `localStorage`, `promises`, `spreader syntax`.
+✣ Practice `JavaScript`: `spreader syntax`, `timeout`, `map()`, `filter()`, `splice()`.
 
 ### App Features
 
