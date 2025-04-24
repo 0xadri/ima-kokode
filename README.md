@@ -20,7 +20,7 @@ todo · todo · todo · todo
 
 # Try It Live
 
-Coming soon...
+🚀 [4 Mini Apps](http://imakokode.s3-website.eu-north-1.amazonaws.com/) 🚀
 
 # Preview
 
