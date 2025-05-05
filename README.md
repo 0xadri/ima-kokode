@@ -3,28 +3,30 @@
 Imakokode stands for "Here and Now" in Japanese. Just had to come up with a name
 
 This is a 4-in-1 Web App, it contains 4 React Mini Apps: 
- - Project Mgmt App
- - Tic-Tac-Toe Game
- - Investment Calculator
- - Timer Game
+ 1. Project Mgmt App
+ 2. Tic-Tac-Toe Game
+ 3. Investment Calculator
+ 4. Timer Game
 
-### Tech
+### 🚀 [Try It Live](http://imakokode.s3-website.eu-north-1.amazonaws.com/) 🚀
+
+# Tech
 
 `Javascript` · `ReactJS`· `Vite` · `NodeJS` 
 
-### Goals
+### Details
 
-✣ Practice `ReactJS`: `useState`, `useRef`, `router`, `spreader syntax`, `props drilling`, `lifting the state`, `compute values`, `derive values`, `state as object`,`state as array`, `state as object w nested objects`
+- Practice `ReactJS`: `useState`, `useRef`, `router`, `spreader syntax`, `props drilling`, `lifting the state`, `compute values`, `derive values`, `state as object`,`state as array`, `state as object w nested objects`
 
-✣ Practice `JavaScript`: `spreader syntax`, `timeout`, `map()`, `filter()`, `splice()`.
+- Practice `JavaScript`: `spreader syntax`, `timeout`, `map()`, `filter()`, `splice()`.
 
-### App Features
+## Build
 
-todo · todo · todo · todo
+1. download this repo
 
-# Try It Live
+2. `npm install`
 
-🚀 [4 Mini Apps](http://imakokode.s3-website.eu-north-1.amazonaws.com/) 🚀
+3. `npm run dev`
 
 # Preview
 
