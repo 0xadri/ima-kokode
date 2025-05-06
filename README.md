@@ -33,24 +33,24 @@ Warning: if deploying on AWS S3 Bucket: add `index.html` to "Error Document" und
 
 # Preview
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.29.52_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.32.39.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.32.34_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.33.51.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.32.42_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.34.26.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.32.50_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.34.46.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.33.11_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.35.02.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.33.37_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.35.17.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.33.45_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.35.29.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.34.05_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.35.35.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.34.18_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.36.12.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.34.25_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.36.28.png)
 
-![4 Mini Apps, by Adri](https://github.com/0xadri/ima-kokode/blob/main/public/img-screenshots/Screenshot%202025-04-24%20at%2012.35.08_lowres.png)
+![4 Mini Apps, by Adri](public/img-screenshots/lowres_Screenshot%202025-05-06%20at%2016.39.10.png)
