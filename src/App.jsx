@@ -13,7 +13,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div className="h-screen pt-30">
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path="/TicTacToe" element={<TicTacToe />} />
         <Route path="/Playground" element={<Playground />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
