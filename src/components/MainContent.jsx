@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function wordToUniqueNumber(word) {
   let uniqueNumber = "";
@@ -45,9 +46,12 @@ const MainContent = ({
   if (currView === views.NO_PROJECT_SELECTED) {
     return (
       <div className="mgmt-content no-project-view">
-        <h2>No Project Selected</h2>
-        <p>Select a project or get started with a new one</p>
-        <button onClick={() => handleClick(views.CREATE_PROJECT)}>
+        <h2 className="text-xl mt-4 mb-3">No Project Selected</h2>
+        <p className="mb-3">Select a project or get started with a new one</p>
+        <button
+          className="mt-3 mb-2 px-4 py-2 border border-zinc-400 hover:border-zinc-200 rounded-lg cursor-pointer max-sm:py-2 max-sm:px-2 max-sm:text-xs text-white bg-gray-800 font-medium text-sm text-center hover:bg-gray-700 focus:ring-2 focus:outline-none focus:ring-blue-300"
+          onClick={() => handleClick(views.CREATE_PROJECT)}
+        >
           Create New Project
         </button>
       </div>
@@ -56,12 +60,15 @@ const MainContent = ({
     return (
       <div className="mgmt-content">
         <div className="mgmt-btns">
-          <button onClick={handleSaveProjDetails} className="mgmt-save-btn">
+          <button
+            onClick={handleSaveProjDetails}
+            className="float-right ml-3 mt-3 mb-2 px-4 py-2 border border-zinc-400 hover:border-zinc-200 rounded-lg cursor-pointer max-sm:py-2 max-sm:px-2 max-sm:text-xs text-white bg-gray-800 font-medium text-sm text-center hover:bg-gray-700 focus:ring-2 focus:outline-none focus:ring-blue-300"
+          >
             Save
           </button>
           <button
             onClick={() => handleClick(views.NO_PROJECT_SELECTED)}
-            className="mgmt-cancel-btn"
+            className="float-right ml-3 mt-3 mb-2 px-4 py-2 border border-zinc-400 hover:border-zinc-200 rounded-lg cursor-pointer max-sm:py-2 max-sm:px-2 max-sm:text-xs text-white bg-gray-800 font-medium text-sm text-center hover:bg-gray-700 focus:ring-2 focus:outline-none focus:ring-blue-300"
           >
             Cancel
           </button>
@@ -75,7 +82,7 @@ const MainContent = ({
             type="text"
             name="title"
             id="title"
-            className="mgmt-title-input"
+            className="mgmt-title-input bg-neutral-700 rounded px-1"
             value={newProjectData.title}
             onChange={(e) => handleChgProjDeets(e, "title")}
           />
@@ -85,7 +92,7 @@ const MainContent = ({
           <textarea
             name="description"
             id="description"
-            className="mgmt-description-input"
+            className="mgmt-description-input bg-neutral-700 rounded px-1"
             value={newProjectData.description}
             onChange={(e) => handleChgProjDeets(e, "description")}
           />
@@ -97,7 +104,7 @@ const MainContent = ({
             type="date"
             name="duedate"
             id="duedate"
-            className="mgmt-duedate-input"
+            className="mgmt-duedate-input bg-neutral-700 rounded px-1"
             value={newProjectData.duedate}
             onChange={(e) => handleChgProjDeets(e, "duedate")}
           />
@@ -108,30 +115,33 @@ const MainContent = ({
     // todo
     return (
       <div className="mgmt-content">
-        <h2 className="mgmt-project-title">{newProjectData.title}</h2>
-        <p className="mgmt-project-duedate">{newProjectData.duedate}</p>
-        <p className="mgmt-project-description">{newProjectData.description}</p>
-        <div className="mgmt-tasks-section">
-          <h3 className="mgmt-tasks-title">Tasks</h3>
+        <h2 className="mt-0 mb-3 text-3xl">{newProjectData.title}</h2>
+        <p className="my-0 mb-3 text-neutral-400">{newProjectData.duedate}</p>
+        <p className="mb-4">{newProjectData.description}</p>
+        <div className="border-t-neutral-400 border-t-1">
+          <h3 className="text-2xl mt-4">Tasks</h3>
           <input
             ref={newTaskRef}
             type="text"
             name="task"
             id="task"
-            className="mgmt-add-task-input"
+            className="bg-neutral-700 rounded px-1"
             required
           />
-          <button className="mgmt-add-task-btn" onClick={handleAdd}>
+          <button
+            className="ml-3 mt-3 mb-2 px-4 py-2 border border-zinc-400 hover:border-zinc-200 rounded-lg cursor-pointer max-sm:py-2 max-sm:px-2 max-sm:text-xs text-white bg-gray-800 font-medium text-sm text-center hover:bg-gray-700 focus:ring-2 focus:outline-none focus:ring-blue-300"
+            onClick={handleAdd}
+          >
             Add Task
           </button>
           {newProjectData.tasks.length > 0 ? (
             <ul className="mgmt-task-list">
               {newProjectData.tasks.map((task) => {
                 return (
-                  <li key={wordToUniqueNumber(task)} className="mgmt-task-item">
+                  <li key={uuidv4()} className="mgmt-task-item">
                     <span className="mgmt-task-name">{task}</span>
                     <button
-                      className="mgmt-task-clear-btn"
+                      className="mt-3 mb-2 px-4 py-2 border border-zinc-400 hover:border-zinc-200 rounded-lg cursor-pointer max-sm:py-2 max-sm:px-2 max-sm:text-xs text-white bg-gray-800 font-medium text-sm text-center hover:bg-gray-700 focus:ring-2 focus:outline-none focus:ring-blue-300"
                       onClick={() => handleRemoveTask(task)}
                     >
                       Clear
@@ -141,9 +151,7 @@ const MainContent = ({
               })}
             </ul>
           ) : (
-            <p className="mgmt-tasks-notasksyet">
-              This project does not have any tasks yet.
-            </p>
+            <p className="mt-3">This project does not have any tasks yet.</p>
           )}
         </div>
       </div>

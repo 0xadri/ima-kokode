@@ -23,7 +23,10 @@ const PlayerSettings = ({ symbol, namePlayer, setNamePlayer }) => {
         </span>
       )}
       <span>{symbol}</span>
-      <button className="save-edit-button" onClick={handleToggleEditSave}>
+      <button
+        className="mx-4 mt-3 mb-2 px-4 py-2 border border-zinc-400 hover:border-zinc-200 rounded-lg cursor-pointer max-sm:py-2 max-sm:px-2 max-sm:text-xs text-white bg-gray-800 font-medium text-sm text-center hover:bg-gray-700 focus:ring-2 focus:outline-none focus:ring-blue-300"
+        onClick={handleToggleEditSave}
+      >
         {fieldIsEditMode ? "Save" : "Edit"}
       </button>
     </div>

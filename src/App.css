@@ -189,16 +189,6 @@
   height: 40px;
 }
 
-.mgmt-save-btn,
-.mgmt-cancel-btn {
-  float: right;
-  margin-left: 10px;
-}
-
-.mgmt-save-btn {
-  background-color: rgb(158, 156, 156);
-}
-
 .mgmt-title-label,
 .mgmt-title-input,
 .mgmt-description-label,
@@ -222,29 +212,10 @@
   text-transform: uppercase;
 }
 
-.mgmt-project-title {
-  margin-top: 0;
-  margin-bottom: 0.4em;
-  font-size: 2.2em;
-}
-
 .mgmt-project-duedate {
   margin-top: 0;
   margin-bottom: 0;
   color: grey;
-}
-
-.mgmt-tasks-section {
-  border-top: 1px solid grey;
-}
-
-.mgmt-add-task-input {
-  width: 200px;
-  font-size: 1em;
-}
-
-.mgmt-add-task-btn {
-  background-color: transparent;
 }
 
 .mgmt-task-list {
@@ -258,16 +229,6 @@
 .mgmt-task-name {
   width: 80%;
   display: inline-block;
-}
-
-.mgmt-task-clear-btn {
-  width: 19%;
-  background-color: transparent;
-}
-
-.mgmt-left-nav-title {
-  text-transform: uppercase;
-  font-size: 1.1em;
 }
 
 .mgmt-left-nav-proj-list {
