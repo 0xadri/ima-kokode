@@ -16,7 +16,7 @@ const TicTacToe = () => {
   };
   return (
     <>
-      <div className="players-params">
+      <div className="mb-5">
         <PlayerSettings
           symbol="0"
           namePlayer={namePlayer1}

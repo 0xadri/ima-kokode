@@ -98,7 +98,7 @@ const PlayBoard = ({ showWinner }) => {
 
   return (
     <>
-      <h2>Turn Now: {playerTurn}</h2>
+      <h2 className="mb-5">Turn Now: {playerTurn}</h2>
       <div className="board-row">
         <div className="board-cell">
           <span className="board-symbol">{boardValues[0][0]}</span>

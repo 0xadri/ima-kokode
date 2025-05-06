@@ -96,7 +96,6 @@
   display: block;
   text-align: left;
   margin-bottom: 5px;
-  text-transform: uppercase;
 }
 
 .inv-row-input-label ,
@@ -114,17 +113,6 @@
 
 /* Tic Tac Toe */
 
-.players-params{
-  margin-bottom: 30px;
-}
-.player-params {
-  display: inline-block;
-}
-.player-name {
-  min-width: 100px;
-  margin-right: 20px;
-  display: inline-block;
-}
 .save-edit-button {
   margin-left: 20px;
 }

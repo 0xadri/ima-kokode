@@ -2,17 +2,18 @@
 
 Imakokode stands for "Here and Now" in Japanese. Just had to come up with a name
 
-This is a 4-in-1 Web App, it contains 4 React Mini Apps: 
- 1. Project Mgmt App
- 2. Tic-Tac-Toe Game
- 3. Investment Calculator
- 4. Timer Game
+This is a 4-in-1 Web App, it contains 4 React Mini Apps:
+
+1.  Project Mgmt App
+2.  Tic-Tac-Toe Game
+3.  Investment Calculator
+4.  Timer Game
 
 ### 🚀 [Try It Live](http://imakokode.s3-website.eu-north-1.amazonaws.com/) 🚀
 
 # Tech
 
-`Javascript` · `ReactJS`· `Vite` · `NodeJS` 
+`Javascript` · `ReactJS`· `Vite` · `NodeJS`
 
 ### Details
 
@@ -22,11 +23,13 @@ This is a 4-in-1 Web App, it contains 4 React Mini Apps:
 
 ## Build
 
-1. download this repo
+1. download/clone this repo locally
 
 2. `npm install`
 
 3. `npm run dev`
+
+Warning: if deploying on AWS S3 Bucket: add `index.html` to "Error Document" under `Properties` -> `Static website hosting`. That's for react router to work. Read more https://stackoverflow.com/questions/51218979/react-router-doesnt-work-in-aws-s3-bucket
 
 # Preview
 
