@@ -28,23 +28,23 @@ const Timer = () => {
         <TimerComp seconds={2} name="2sec" updateLog={updateLog} />
       </div>
       <div>
-        <h2>Log</h2>
+        <h2 className="text-xl mb-5">Log</h2>
         <div className="timer-log-section">
           {/* <p>{log.startLogTxt ? "Start Log: " + log.startLogTxt : null}</p> */}
           {log.startLogTxt && (
-            <p>
+            <p className="text-base mb-5">
               {/* <span className="timer-log-label">Start:</span>  */}
               {log.startLogTxt}
             </p>
           )}
           {log.endLogTxt && (
-            <p>
+            <p className="text-base mb-5">
               {/* <span className="timer-log-label">End:</span>  */}
               {log.endLogTxt}
             </p>
           )}
           {log.stopLogTxt && (
-            <p>
+            <p className="text-base mb-5">
               {/* <span className="timer-log-label">Stop:</span>  */}
               {log.stopLogTxt}
             </p>
