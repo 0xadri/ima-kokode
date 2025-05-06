@@ -110,7 +110,6 @@ const ProjectMgmt = () => {
 
   return (
     <>
-      <h1>Project Management</h1>
       <div className="mgmt-main">
         <LeftPanel
           leftMenuItems={leftMenuItems}

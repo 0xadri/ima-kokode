@@ -21,7 +21,6 @@ const InvestmentCalculator = () => {
 
   return (
     <div>
-      <h1>Investment Calculator</h1>
       <InvestmentParamInputs
         setInvestmentParameters={setInvestmentParameters}
         invParams={invParams}

@@ -23,7 +23,6 @@ const Timer = () => {
 
   return (
     <div>
-      <h1>Timer Challenge</h1>
       <div>
         <TimerComp seconds={1} name="1sec" updateLog={updateLog} />
         <TimerComp seconds={2} name="2sec" updateLog={updateLog} />
