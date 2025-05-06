@@ -12,7 +12,7 @@ const InvestmentParamInputs = ({ setInvestmentParameters, invParams }) => {
               name="initial-investment"
               id="initial-investment"
               placeholder="Type Initial Investment..."
-              className="inv-row-input-field"
+              className="inv-row-input-field bg-neutral-800 rounded px-1"
               value={invParams.initialInvestment}
               onChange={(e) =>
                 setInvestmentParameters("initialInvestment", e.target.value)
@@ -28,7 +28,7 @@ const InvestmentParamInputs = ({ setInvestmentParameters, invParams }) => {
               name="annual-investment"
               id="annual-investment"
               placeholder="Type Annual Investment..."
-              className="inv-row-input-field"
+              className="inv-row-input-field bg-neutral-800 rounded px-1"
               value={invParams.annualInvestment}
               onChange={(e) =>
                 setInvestmentParameters("annualInvestment", e.target.value)
@@ -46,7 +46,7 @@ const InvestmentParamInputs = ({ setInvestmentParameters, invParams }) => {
               name="expected-return"
               id="expected-return"
               placeholder="Type Expected Return..."
-              className="inv-row-input-field"
+              className="inv-row-input-field bg-neutral-800 rounded px-1"
               value={invParams.expectedReturn}
               onChange={(e) =>
                 setInvestmentParameters("expectedReturn", e.target.value)
@@ -62,7 +62,7 @@ const InvestmentParamInputs = ({ setInvestmentParameters, invParams }) => {
               name="duration"
               id="duration"
               placeholder="Type Duration..."
-              className="inv-row-input-field"
+              className="inv-row-input-field bg-neutral-800 rounded px-1"
               value={invParams.duration}
               onChange={(e) =>
                 setInvestmentParameters("duration", e.target.value)

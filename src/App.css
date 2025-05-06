@@ -77,8 +77,8 @@
 
 .inv-param-inputs-area {
   background-color: #026202;
-  padding: 50px;
-  background: linear-gradient(180deg, #307e6c, #2b996d);
+  padding: 30px 50px 20px 50px;
+  background: linear-gradient(180deg, #1e2938, #237957);
 }
 
 .inv-row-one,
@@ -107,10 +107,6 @@
 
 .inv-returns-area {
   padding: 50px;
-}
-
-.inv-returns-th {
-  padding: 0 10px;
 }
 
 /* END: Investment Calculator */
