@@ -9,7 +9,9 @@ This 4-in-1 project contains 4 Mini Apps:
 
 ### 🚀 [Try It Live](http://imakokode.s3-website.eu-north-1.amazonaws.com/) 🚀
 
-Imakokode stands for "Here and Now" in Japanese. Just had to come up with a name ツ
+App optimized for **desktop**.
+
+_Imakokode stands for "Here and Now" in Japanese. Just had to come up with a name ツ_
 
 # Tech
 
@@ -20,6 +22,8 @@ Imakokode stands for "Here and Now" in Japanese. Just had to come up with a name
 - **`ReactJS`**: `useState`, `useRef`, `router`, `spreader syntax`, `props drilling`, `lifting the state`, `compute values`, `derive values`, `state as object`,`state as array`, `state as object w nested objects`
 
 - **`JavaScript`**: `spreader syntax`, `timeout`, `map()`, `filter()`, `splice()`.
+
+- **`TailwindCSS`**: `Nav Menu`, and more.
 
 ## Build
 
