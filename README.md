@@ -1,8 +1,6 @@
 # Imakokode
 
-Imakokode stands for "Here and Now" in Japanese. Just had to come up with a name
-
-This is a 4-in-1 Web App, it contains 4 React Mini Apps:
+This 4-in-1 project contains 4 Mini Apps:
 
 1.  Project Mgmt App
 2.  Tic-Tac-Toe Game
@@ -11,15 +9,17 @@ This is a 4-in-1 Web App, it contains 4 React Mini Apps:
 
 ### 🚀 [Try It Live](http://imakokode.s3-website.eu-north-1.amazonaws.com/) 🚀
 
+Imakokode stands for "Here and Now" in Japanese. Just had to come up with a name ツ
+
 # Tech
 
 `Javascript` · `ReactJS`· `Vite` · `NodeJS`
 
 ### Details
 
-- Practice `ReactJS`: `useState`, `useRef`, `router`, `spreader syntax`, `props drilling`, `lifting the state`, `compute values`, `derive values`, `state as object`,`state as array`, `state as object w nested objects`
+- **`ReactJS`**: `useState`, `useRef`, `router`, `spreader syntax`, `props drilling`, `lifting the state`, `compute values`, `derive values`, `state as object`,`state as array`, `state as object w nested objects`
 
-- Practice `JavaScript`: `spreader syntax`, `timeout`, `map()`, `filter()`, `splice()`.
+- **`JavaScript`**: `spreader syntax`, `timeout`, `map()`, `filter()`, `splice()`.
 
 ## Build
 
